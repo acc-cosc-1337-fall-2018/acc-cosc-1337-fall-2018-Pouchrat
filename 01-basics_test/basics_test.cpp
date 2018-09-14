@@ -20,3 +20,15 @@ TEST_CASE("Test multiply_numbers", "Products 4,25,100")
 	REQUIRE(multiply_numbers(5, 5) == 25);
 	REQUIRE(multiply_numbers(10, 10) == 100);
 }
+
+TEST_CASE("test pass by val and ref", "(0,0) (0, 99)")
+{
+	int num1{0};
+	int num2{0};
+	
+	pass_by_val_by_ref(num1, num2);
+	
+	REQUIRE(num1 == 0);
+	REQUIRE(num2 == 99);
+	
+}
