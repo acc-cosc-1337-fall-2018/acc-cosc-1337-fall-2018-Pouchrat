@@ -22,5 +22,5 @@ install:
 script:
   - mkdir build
   - cd build
-  - cmake -DCMAKE_CXX_COMPILER=$COMPILER .. && make
-  - ./01-basics_test/basics_test -s
+  - cmake -std=gnu++11 -DCMAKE_CXX_COMPILER=$COMPILER .. && make
+  - ./homeworks/03-strings-loops-functions-dna-test/dna_test -s
