@@ -6,7 +6,7 @@ int get_point_mutations(std::string dna1, std::string dna2)
 	int i = 0;
 	int ham = 0;
 	if (dna1.size() != dna2.size()) {
-		std::cerr << "Not the same size.";
+		return -1;
 	}
 	else
 		while (i <= dna1.size()) {
@@ -29,10 +29,8 @@ std::string get_dna_complement(std::string dna) {
 	std::string rep;
 	int i = 0;
 
-	while (i <= dna.size()) {
-		rep = dna[i];
- ///////////////////////////??????????????????????????????
-		i++;
+	for (unsigned int i = string.length() - 1; i != -1; --i) {
+		comp += dna[i];
 	} //reverses the order
 
 	while (i <= comp.size()) {
