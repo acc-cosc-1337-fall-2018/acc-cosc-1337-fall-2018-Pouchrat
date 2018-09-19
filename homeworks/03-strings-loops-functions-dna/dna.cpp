@@ -13,9 +13,10 @@ int get_point_mutations(std::string dna1, std::string dna2)
 			if (dna1.at(i) != dna2.at(i))
 			{
 				ham++;
+				i++;
 			}
-			else break;
-			i++;
+			else i++;
+
 			return ham;
 		}
 
@@ -67,12 +68,13 @@ std::string transcribe_dna_into_rna(std::string dna) {
 	while (i <= rna.size()) {
 		if (rna[i] == 'T') {
 			rna[i] = 'U';
+			i++;
 		}
-		else break;
-		i++;
+		else i++;
+
+		return rna;
 	}
 
-	return rna;
 }
 
 double get_gc_content(std::string dna)
