@@ -30,20 +30,20 @@ std::string get_dna_complement(std::string dna) {
 	int i = 0;
 
 	while (i <= dna.size()) {
-		rep = dna.at(i);
+		rep = dna[i];
  ///////////////////////////??????????????????????????????
 		i++;
 	} //reverses the order
 
 	while (i <= comp.size()) {
-		if (comp.at(i) == 'C') {
-			comp.at(i) = 'G';
+		if (comp[i] == 'C') {
+			comp[i] = 'G';
 		}
-		else if (comp.at(i) == 'G') {
-			comp.at(i) = 'C';
+		else if (comp[i] == 'G') {
+			comp[i] = 'C';
 		}
-		else if (comp.at(i) == 'A') {
-			comp.at(i) = 'T';
+		else if (comp[i] == 'A') {
+			comp[i] = 'T';
 		}
 		else if (comp.at(i) == 'T') {
 			comp.at(i) = 'A';
@@ -67,8 +67,8 @@ std::string transcribe_dna_into_rna(std::string dna) {
 	std::string rna = dna;
 	
 	while (i <= rna.size()) {
-		if (rna.at(i) == 'T') {
-			rna.at(i) = 'U';
+		if (rna[i] == 'T') {
+			rna[i] = 'U';
 		}
 		else break;
 	}
