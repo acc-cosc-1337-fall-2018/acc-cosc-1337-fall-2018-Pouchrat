@@ -16,9 +16,9 @@ int get_point_mutations(std::string dna1, std::string dna2)
 			}
 			else break;
 			i++;
+			return ham;
 		}
 
-	return ham;
 }
 
 
@@ -29,7 +29,7 @@ std::string get_dna_complement(std::string dna) {
 	std::string rep;
 	int i = 0;
 
-	for (unsigned int i = dna.length() - 1; i != -1; --i) {
+	for (unsigned int i = dna.size() - 1; i != -1; --i) {
 		comp += dna[i];
 	} //reverses the order
 
@@ -69,6 +69,7 @@ std::string transcribe_dna_into_rna(std::string dna) {
 			rna[i] = 'U';
 		}
 		else break;
+		i++;
 	}
 
 	return rna;
