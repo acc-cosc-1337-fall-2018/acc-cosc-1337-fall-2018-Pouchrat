@@ -29,7 +29,7 @@ std::string get_dna_complement(std::string dna) {
 	std::string rep;
 	int i = 0;
 
-	for (unsigned int i = string.length() - 1; i != -1; --i) {
+	for (unsigned int i = dna.length() - 1; i != -1; --i) {
 		comp += dna[i];
 	} //reverses the order
 
