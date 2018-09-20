@@ -10,49 +10,44 @@ int get_point_mutations(std::string dna1, std::string dna2)
 	}
 	else
 		while (i <= dna1.size()) {
-			if (dna1.at(i) != dna2.at(i))
+			if (dna1[i] == dna2[i])
+			{
+				i++;
+			}
+			else
 			{
 				ham++;
 				i++;
 			}
-			else i++;
 
-			return ham;
 		}
-
+	return ham;
 }
 
 
 //write function code for std::string get_dna_complement(std::string dna)
 
 std::string get_dna_complement(std::string dna) {
-	std::string comp;
-	std::string rep;
-	int i = 0;
+	std::string comp = "";
 
-	for (unsigned int i = dna.size() - 1; i != -1; --i) {
+	for (int i = dna.size() - 1; i != -1; --i) {
 		comp += dna[i];
 	} //reverses the order
 
-	while (i <= comp.size()) {
-		if (comp[i] == 'C') {
-			comp[i] = 'G';
+	for (int j = 0; j <= comp.size(); ++j) {
+		if (comp[j] == 'C') {
+			comp[j] = 'G';
 		}
-		else if (comp[i] == 'G') {
-			comp[i] = 'C';
+		else if (comp[j] == 'G') {
+			comp[j] = 'C';
 		}
-		else if (comp[i] == 'A') {
-			comp[i] = 'T';
+		else if (comp[j] == 'A') {
+			comp[j] = 'T';
 		}
-		else if (comp.at(i) == 'T') {
-			comp.at(i) = 'A';
+		else if (comp[j] == 'T') {
+			comp[j] = 'A';
 		}
-		else
-		{
-			std::cerr << "No matching character found.";
-		}
-
-		i++;
+		else { break; }
 	} //changes the characters to their complements
 
 	return comp;
@@ -62,19 +57,25 @@ std::string get_dna_complement(std::string dna) {
 //write function code for std::string transcribe_dna_into_rna(std::string dna);
 
 std::string transcribe_dna_into_rna(std::string dna) {
-	int i = 0;
 	std::string rna = dna;
 	
-	while (i <= rna.size()) {
-		if (rna[i] == 'T') {
-			rna[i] = 'U';
-			i++;
+	for (int i = 0; i <= dna.size(); ++i) {
+		if (dna[i] == 'G') {
+			rna[i] = 'G';
 		}
-		else i++;
-
-		return rna;
+		else if (dna[i] == 'C') {
+			rna[i] = 'C';
+		}
+		else if (dna[i] == 'A') {
+			rna[i] = 'A';
+		}
+		else if (dna[i] == 'T') {
+			rna[i] = 'U';
+		}
+		else { break; }
 	}
 
+	return rna;
 }
 
 double get_gc_content(std::string dna)

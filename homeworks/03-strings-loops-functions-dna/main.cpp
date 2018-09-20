@@ -29,5 +29,8 @@ int main()
 	auto gc_cont = get_gc_content("CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGACTGGGAACCTGCGGGCAGTAGGTGGAAT");
 	cout << gc_cont << std::endl;
 
+	std::cout << " \nPress enter to continue\n";
+	std::cin.ignore();
+
 	return 0;
 }
