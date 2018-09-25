@@ -20,9 +20,12 @@ a vector of ints with values 2, 3, 4 should return 4+9+16 which is 29.
 
 WRITE THE PARAM AND RETURN COMMENTS BELOW(SEE MY EXAMPLE ABOVE)
 
+@param numbers is a reference to a vector of integers
+@return the sum of the squared numbers in the vector
+
 */
 //write function prototype
-
+int sum_of_squares(vector<int>& numbers);
 
 
 
@@ -49,7 +52,7 @@ given a number returns true if prime or false if not prime
 */
 //write prototype here
 
-
+bool is_prime(int num);
 
 
 
@@ -72,3 +75,5 @@ Psuedocode:
 	make sure to return vector of ints primes after loop exits
 */
 //write function prototype here
+
+vector<int> vector_of_primes(int n);

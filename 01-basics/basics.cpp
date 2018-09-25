@@ -1,5 +1,6 @@
 #include "basics.h"
 
+
 int sum_numbers(int num1, int num2)
 {
 	return num1 + num2;
@@ -41,6 +42,6 @@ void initialize_vector_of_strings() {
 	philosphers.push_back("socrates");
 
 	for (auto p : philosphers) {
-		cout << p << "\n";
+		cout << p << endl;
 	}
 }

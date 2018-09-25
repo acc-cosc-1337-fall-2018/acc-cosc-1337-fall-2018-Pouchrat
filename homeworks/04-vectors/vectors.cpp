@@ -9,6 +9,10 @@ int get_max_from_vector(vector<int>& numbers)
 
 //write the code for sum_of_squares function here
 
+int sum_of_squares(vector<int>& numbers) {
+	int sum = 0;
+	return sum;
+}
 
 
 //write the code for function replace here
@@ -26,7 +30,20 @@ void replace(vector<string>& strings, const string& old, const string& new_val)
 
 //write is_prime function code here
 
+bool is_prime(int num) {
+	
+	if (num) {
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
 
 
 //write vector_of_primes function code here
+vector<int> vector_of_primes(int n) {
+
+}
