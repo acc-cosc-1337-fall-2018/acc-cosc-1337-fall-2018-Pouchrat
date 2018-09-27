@@ -10,6 +10,7 @@ include_directories(homeworks/04-vectors)
 add_subdirectory(01-basics)
 add_subdirectory(01-basics_test)
 add_subdirectory(homeworks)
+add_subdirectory(assignments)
 
 
 

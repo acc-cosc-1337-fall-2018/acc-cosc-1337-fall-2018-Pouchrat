@@ -1,0 +1,1 @@
+#include "invoice_detail.h"
