@@ -7,6 +7,14 @@
 //with values 4, 5, 1, 50, 6, 77, 0 result should be 77
 //with values 99, 1000, 10, 500, 66, 770, 10 result should be 1000
 
+TEST_CASE("get max from vector", "ints") {
+	vector<int> set1 = { 4, 5, 1, 50, 6, 77, 0 };
+	REQUIRE(get_max_from_vector(set1)== 77);
+
+	vector<int> set2 = { 99, 1000, 10, 500, 66, 770, 10 };
+	REQUIRE(get_max_from_vector(set2) == 1000);
+}
+
 
 
 
@@ -14,16 +22,20 @@
 //with values 2, 3, 4 result should be 29
 //with values 2, 3, 4 , 5 result should be 54
 
+TEST_CASE("sum of squares", "ints") {
+	vector<int> set1 = { 2, 3, 4 };
+	REQUIRE(sum_of_squares(set1) == 29);
+
+	vector<int> set2 = { 2, 3, 4 , 5 };
+	REQUIRE(sum_of_squares(set2) == 54);
+}
 
 
 
 
 //test case for replace function
 TEST_CASE("Test for replace vector element")
-{
-	
-	/* remove the forward slash and asterisk to run TEST_CASE assertions
-	
+{	
 	vector <string>  names{ "Joe", "joe", "mary" };
 	replace(names, "joe", "John");
 
@@ -41,15 +53,17 @@ TEST_CASE("Test for replace vector element")
 	REQUIRE(names[3] == "Pam");
 	REQUIRE(names[6] == "Pam");
 
-	remove the asterisk and forward slash to run TEST_CASE assertions
-	*/
 }
 
 
 //write test case for is_prime here with
 //function argument 3 result should be true
 //function argument 4 result should be false
-
+TEST_CASE("is prime?", "ints")
+{
+	REQUIRE(is_prime(3) == true);
+	REQUIRE(is_prime(4) == false);
+}
 
 
 
@@ -60,7 +74,6 @@ TEST_CASE("Test for replace vector element")
 //2 3 5 7 11 13 17 19 23 29 31 37 41 43 47
 TEST_CASE("Test vector of primes") 
 {
-	/*remove the forward slash and asterisk to run TEST_CASE assertions
 
 	vector<int> primes_up_to_10{ 2,3,5,7 };
 
@@ -74,8 +87,16 @@ TEST_CASE("Test vector of primes")
 		REQUIRE(primes_up_to_10[i] == primes[i]);
 	}
 
-	WRITE THE TEST CASE FOR PRIMES UP TO 50; FOLLOW MY EXAMPLE ABOVE
+	//WRITE THE TEST CASE FOR PRIMES UP TO 50; FOLLOW MY EXAMPLE ABOVE
+	
+	vector<int> primes_up_to_50{ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 };
 
-	remove the asterisk and forward slash to run TEST_CASE assertions
-	*/
+	vector<int> primes2 = vector_of_primes(50);
+	REQUIRE(primes_up_to_50.size() == primes2.size());
+
+	for (std::size_t i = 0; i < primes_up_to_50.size(); ++i)
+	{
+		REQUIRE(primes_up_to_50[i] == primes2[i]);
+	}
+
 }
