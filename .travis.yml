@@ -23,4 +23,4 @@ script:
   - mkdir build
   - cd build
   - cmake -std=gnu++11 -DCMAKE_CXX_COMPILER=$COMPILER .. && make
-  - ./homeworks/03-strings-loops-functions-dna-test/dna_test -s
+  - ./homeworks/04-vectors-test/vectors_test -s 
