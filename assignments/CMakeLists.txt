@@ -1,2 +1,2 @@
 add_subdirectory(05-classes)
-add_subdirectory(05-class-test)
+add_subdirectory(05-classes-test)
