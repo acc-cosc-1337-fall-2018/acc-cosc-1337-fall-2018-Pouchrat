@@ -1,9 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
-
-using std::cout; using std::cin; using std::string; using std::vector;
-
 //class start
 #ifndef INVOICE_D
 #define INVOICE_D
