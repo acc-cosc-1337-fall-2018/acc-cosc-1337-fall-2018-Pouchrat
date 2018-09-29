@@ -3,26 +3,31 @@
 int main() {
 	TicTacToeBoard board;
 	
-	string start;
-	string marker;
+	string start = "y";
+	string marker = " ";
 	int pos;
 	do {
-		cout << "Start new game? (y/n) ";
-		cin >> start;
-		if (start == "y" || start == "Y") {
+			cout << "Start new game? (y/n) ";
+			cin >> start;
+
+			if (start == "y" || start == "Y") {
+				board.game_over() == false;
+			}
+			else break;
+
 			while (marker != "x" && marker != "o" && marker != "X" && marker != "O") {
 				cout << "First player letter? (x/o) ";
 				cin >> marker;
 			}
 			board.start_game(marker);
-		}
-		else break;
 
-		while (board.game_over() == false) {
-			cout << "Place " << board.get_player() << " where? (start at 0) ";
-			cin >> pos;
-			board.mark_board(pos);
-		}
+			while (board.game_over() == false) {
+				cout << "Place " << board.get_player() << " where? (1-9) ";
+				cin >> pos;
+				board.mark_board(pos);
+			}
+
+			cout << "\nGame over!\n";
 
 	} while (board.game_over() == true);
 

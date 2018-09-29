@@ -11,18 +11,20 @@ bool TicTacToeBoard::game_over()
 
 void TicTacToeBoard::start_game(string player)
 {
-	if (player == "X" || player == "x") {
+	if (player == "X" || player == "x") { //wiggle room
 		next_player = "X";
 	}
 	else if (player == "O" || player == "o") {
 		next_player = "O";
 	}
 	clear_board();
+	display_board();
 }
 
 void TicTacToeBoard::mark_board(int position)
 {
-	pegs[position] = next_player;
+	int real_pos = position - 1;
+	pegs[real_pos] = next_player;
 	set_next_player();
 	cout << endl;
 	display_board();
@@ -100,17 +102,17 @@ bool TicTacToeBoard::check_diagonal_win()
 
 void TicTacToeBoard::clear_board()
 {
-	for (auto p : pegs) {
-		p = " ";
+	for (int i = 0; i < 9; i++) {
+		pegs[i] = " ";
 	}
 }
 
 bool TicTacToeBoard::check_board_full()
 {
-	int tf = 0;
+	int tf = 0; //to count up the filled spaces
 	for (auto p : pegs) {
 		if (p == "X" || p == "O") {
-			tf = tf + 1;
+			tf = tf + 1; //wouldn't let me do ++tf.
 		}
 		else tf = 0 + tf;
 	}

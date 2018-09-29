@@ -227,5 +227,4 @@ TEST_CASE("Test no-win", "[no-win by incomplete]")
 	board.mark_board(6);//X 
 
 	REQUIRE(board.game_over() == false);
-	//WHY does it think x's and o's are interchangeable
 }
