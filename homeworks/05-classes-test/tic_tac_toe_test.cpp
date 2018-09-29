@@ -161,8 +161,8 @@ TEST_CASE("Test win by diagonal from top", "[X wins diagonal top]")
 	TicTacToeBoard board;
 	board.start_game("X");
 	board.mark_board(0);//X 
-	board.mark_board(4);//O 
-	board.mark_board(1);//X 
+	board.mark_board(1);//O 
+	board.mark_board(4);//X 
 	board.mark_board(5);//O 
 	board.mark_board(8);//X 
 	//X wins 

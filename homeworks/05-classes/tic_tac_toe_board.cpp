@@ -11,7 +11,12 @@ bool TicTacToeBoard::game_over()
 
 void TicTacToeBoard::start_game(string player)
 {
-	next_player = player;
+	if (player == "X" || player == "x") {
+		next_player = "X";
+	}
+	else if (player == "O" || player == "o") {
+		next_player = "O";
+	}
 	clear_board();
 }
 
@@ -102,10 +107,13 @@ void TicTacToeBoard::clear_board()
 
 bool TicTacToeBoard::check_board_full()
 {
+	int tf = 0;
 	for (auto p : pegs) {
-		if (p == " ") {
-			return false;
+		if (p == "X" || p == "O") {
+			tf = tf + 1;
 		}
-		else return true;
+		else tf = 0 + tf;
 	}
+	if (tf < 9) return false;
+	else return true;
 }

@@ -23,4 +23,4 @@ script:
   - mkdir build
   - cd build
   - cmake -std=gnu++11 -DCMAKE_CXX_COMPILER=$COMPILER .. && make
-  - ./homeworks/04-vectors-test/vectors_test -s 
+  - ./homeworks/05-classes-test/tic_tac_toe_test -s 
