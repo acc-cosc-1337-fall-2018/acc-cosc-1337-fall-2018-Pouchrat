@@ -41,7 +41,7 @@ TEST_CASE("Test win by second column", "[X wins second column]")
 	board.start_game("X");
 	board.mark_board(1);//X 
 	board.mark_board(2);//O 
-	board.mark_board(4);//X 
+	board.mark_board(4);//X
 	board.mark_board(5);//O 
 	board.mark_board(7);//X 
 	//X wins 
@@ -74,12 +74,16 @@ TEST_CASE("Test win by third column", "[X wins third column]")
 TEST_CASE("Test start player X, next player O") {
 	TicTacToeBoard board;
 	board.start_game("X");
+	REQUIRE(board.get_player() == "X");
+	board.mark_board(5);
 	REQUIRE(board.get_player() == "O");
 }
 
 TEST_CASE("Test start player O, next player X") {
 	TicTacToeBoard board;
 	board.start_game("O");
+	REQUIRE(board.get_player() == "O");
+	board.mark_board(5);
 	REQUIRE(board.get_player() == "X");
 }
 

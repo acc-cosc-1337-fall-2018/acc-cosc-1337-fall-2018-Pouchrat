@@ -19,14 +19,12 @@ void TicTacToeBoard::mark_board(int position)
 {
 	pegs[position] = next_player;
 	set_next_player();
+	cout << endl;
+	display_board();
 }
 
 string TicTacToeBoard::get_player()
 {
-	if (next_player == "X") {
-		next_player = "O";
-	}
-	else next_player = "X";
 	return next_player;
 }
 
@@ -49,13 +47,16 @@ void TicTacToeBoard::set_next_player()
 
 bool TicTacToeBoard::check_column_win()
 {
-	if ((pegs[0] == "X" && pegs[3] == "X" && pegs[6] == "X") || (pegs[0] == "O" && pegs[3] == "O" && pegs[6] == "O")) {
+	if ((pegs[0] == "X" && pegs[3] == "X" && pegs[6] == "X") ^ 
+		(pegs[0] == "O" && pegs[3] == "O" && pegs[6] == "O")) {
 		return true;
 	}
-	else if ((pegs[1] == "X" && pegs[4] == "X" && pegs[7] == "X") || (pegs[1] == "O" && pegs[4] == "O" && pegs[7] == "O")) {
+	else if ((pegs[1] == "X" && pegs[4] == "X" && pegs[7] == "X") || 
+		(pegs[1] == "O" && pegs[4] == "O" && pegs[7] == "O")) {
 		return true;
 	}
-	else if ((pegs[2] == "X" && pegs[5] == "X" && pegs[8] == "X") || (pegs[2] == "O" && pegs[5] == "O" && pegs[8] == "O")) {
+	else if ((pegs[2] == "X" && pegs[5] == "X" && pegs[8] == "X") || 
+		(pegs[2] == "O" && pegs[5] == "O" && pegs[8] == "O")) {
 		return true;
 	}
 	else return false;
@@ -64,13 +65,16 @@ bool TicTacToeBoard::check_column_win()
 
 bool TicTacToeBoard::check_row_win()
 {
-	if ((pegs[0] == "X" && pegs[1] == "X" && pegs[2] == "X") || (pegs[0] == "O" && pegs[1] == "O" && pegs[2] == "O")) {
+	if ((pegs[0] == "X" && pegs[1] == "X" && pegs[2] == "X") || 
+		(pegs[0] == "O" && pegs[1] == "O" && pegs[2] == "O")) {
 		return true;
 	}
-	else if ((pegs[3] == "X" && pegs[4] == "X" && pegs[5] == "X") || (pegs[3] == "O" && pegs[4] == "O" && pegs[5] == "O")) {
+	else if ((pegs[3] == "X" && pegs[4] == "X" && pegs[5] == "X") || 
+		(pegs[3] == "O" && pegs[4] == "O" && pegs[5] == "O")) {
 		return true;
 	}
-	else if ((pegs[6] == "X" && pegs[7] == "X" && pegs[8] == "X") || (pegs[6] == "O" && pegs[7] == "O" && pegs[8] == "O")) {
+	else if ((pegs[6] == "X" && pegs[7] == "X" && pegs[8] == "X") || 
+		(pegs[6] == "O" && pegs[7] == "O" && pegs[8] == "O")) {
 		return true;
 	}
 	else return false;
@@ -78,10 +82,12 @@ bool TicTacToeBoard::check_row_win()
 
 bool TicTacToeBoard::check_diagonal_win()
 {
-	if ((pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X") || (pegs[0] == "O" && pegs[4] == "O" && pegs[8] == "O")) {
+	if ((pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X") || 
+		(pegs[0] == "O" && pegs[4] == "O" && pegs[8] == "O")) {
 		return true;
 	}
-	else if ((pegs[2] == "X" && pegs[4] == "X" && pegs[6] == "X") || (pegs[2] == "O" && pegs[4] == "O" && pegs[6] == "O")) {
+	else if ((pegs[2] == "X" && pegs[4] == "X" && pegs[6] == "X") || 
+		(pegs[2] == "O" && pegs[4] == "O" && pegs[6] == "O")) {
 		return true;
 	}
 	else return false;
