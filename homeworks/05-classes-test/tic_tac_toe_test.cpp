@@ -152,16 +152,16 @@ TEST_CASE("Test win by third row", "[X wins third row]")
 
 TEST_CASE("Test win by diagonal from top", "[X wins diagonal top]")
 { /* Tic Tac Toe Board
-		012
-		345
-		678
+		012   123
+		345   456
+		678   789
 
 	   Diagonal top win are user positions 1,5, and 9
 	  */
 	TicTacToeBoard board;
 	board.start_game("X");
 	board.mark_board(1);//X 
-	board.mark_board(0);//O 
+	board.mark_board(2);//O 
 	board.mark_board(5);//X 
 	board.mark_board(3);//O 
 	board.mark_board(9);//X 
@@ -182,7 +182,7 @@ TEST_CASE("Test win by diagonal from bottom", "[X wins diagonal bottom]")
 	TicTacToeBoard board;
 	board.start_game("X");
 	board.mark_board(3);//X 
-	board.mark_board(0);//O 
+	board.mark_board(4);//O 
 	board.mark_board(5);//X 
 	board.mark_board(2);//O 
 	board.mark_board(7);//X 
