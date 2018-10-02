@@ -20,8 +20,7 @@ private:
 	bool check_diagonal_win();
 	void clear_board();
 	bool check_board_full();
-	vector<string> pegs = {" ", " ", " ", " ", 
-		" ", " ", " ", " ", " "}; //9 pegs, 0-8
+	vector<string> pegs = {" ", " ", " ", " ", " ", " ", " ", " ", " "}; //9 pegs, 0-8
 	string next_player;
 
 
