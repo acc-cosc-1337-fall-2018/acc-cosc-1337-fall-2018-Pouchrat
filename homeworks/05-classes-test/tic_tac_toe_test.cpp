@@ -18,11 +18,11 @@ TEST_CASE("Test win by first column", "[X wins first column]")
 	  */
 	TicTacToeBoard board;
 	board.start_game("X");
-	board.mark_board(0);//X 
-	board.mark_board(7);//O 
-	board.mark_board(3);//X 
+	board.mark_board(1);//X 
+	board.mark_board(2);//O 
+	board.mark_board(4);//X 
 	board.mark_board(5);//O 
-	board.mark_board(6);//X 
+	board.mark_board(7);//X 
 	//X wins 
 
 	REQUIRE(board.game_over() == true);
@@ -35,15 +35,15 @@ TEST_CASE("Test win by second column", "[X wins second column]")
 		345
 		678
 
-	   Second column win are user positions 1,4, and 7
+	   Second column win are user positions 2,5, and 8
 	  */
 	TicTacToeBoard board;
 	board.start_game("X");
-	board.mark_board(1);//X 
-	board.mark_board(2);//O 
-	board.mark_board(4);//X
-	board.mark_board(5);//O 
-	board.mark_board(7);//X 
+	board.mark_board(2);//X 
+	board.mark_board(3);//O 
+	board.mark_board(5);//X
+	board.mark_board(6);//O 
+	board.mark_board(8);//X 
 	//X wins 
 
 	REQUIRE(board.game_over() == true);
@@ -56,15 +56,15 @@ TEST_CASE("Test win by third column", "[X wins third column]")
 		345
 		678
 
-	   third column win are user positions 2,5, and 8
+	   third column win are user positions 3,6, and 9
 	  */
 	TicTacToeBoard board;
 	board.start_game("X");
-	board.mark_board(2);//X 
+	board.mark_board(3);//X 
+	board.mark_board(4);//O 
+	board.mark_board(6);//X 
 	board.mark_board(1);//O 
-	board.mark_board(5);//X 
-	board.mark_board(3);//O 
-	board.mark_board(8);//X 
+	board.mark_board(9);//X 
 	//X wins 
 
 	REQUIRE(board.game_over() == true);
@@ -93,15 +93,15 @@ TEST_CASE("Test win by first row", "[X wins first row]")
 		345
 		678
 
-	   First row win are user positions 0,1, and 2
+	   First row win are user positions 1,2, and 3
 	  */
 	TicTacToeBoard board;
 	board.start_game("X");
-	board.mark_board(0);//X 
-	board.mark_board(4);//O 
 	board.mark_board(1);//X 
-	board.mark_board(5);//O 
+	board.mark_board(4);//O 
 	board.mark_board(2);//X 
+	board.mark_board(5);//O 
+	board.mark_board(3);//X 
 	//X wins 
 
 	REQUIRE(board.game_over() == true);
@@ -114,15 +114,15 @@ TEST_CASE("Test win by second row", "[X wins second row]")
 		345
 		678
 
-	   Second row win are user positions 3,4, and 5
+	   Second row win are user positions 4,5 and 6
 	  */
 	TicTacToeBoard board;
 	board.start_game("X");
-	board.mark_board(3);//X 
-	board.mark_board(2);//O 
 	board.mark_board(4);//X 
-	board.mark_board(1);//O 
+	board.mark_board(2);//O 
 	board.mark_board(5);//X 
+	board.mark_board(1);//O 
+	board.mark_board(6);//X 
 	//X wins 
 
 	REQUIRE(board.game_over() == true);
@@ -135,15 +135,15 @@ TEST_CASE("Test win by third row", "[X wins third row]")
 		345
 		678
 
-	   Third row win are user positions 6,7, and 8
+	   Third row win are user positions 7,8, and 9
 	  */
 	TicTacToeBoard board;
 	board.start_game("X");
-	board.mark_board(6);//X 
-	board.mark_board(4);//O 
 	board.mark_board(7);//X 
-	board.mark_board(5);//O 
+	board.mark_board(4);//O 
 	board.mark_board(8);//X 
+	board.mark_board(5);//O 
+	board.mark_board(9);//X 
 	//X wins 
 
 	REQUIRE(board.game_over() == true);
@@ -156,15 +156,15 @@ TEST_CASE("Test win by diagonal from top", "[X wins diagonal top]")
 		345
 		678
 
-	   Diagonal top win are user positions 0,4, and 8
+	   Diagonal top win are user positions 1,5, and 9
 	  */
 	TicTacToeBoard board;
 	board.start_game("X");
-	board.mark_board(0);//X 
-	board.mark_board(1);//O 
-	board.mark_board(4);//X 
-	board.mark_board(5);//O 
-	board.mark_board(8);//X 
+	board.mark_board(1);//X 
+	board.mark_board(0);//O 
+	board.mark_board(5);//X 
+	board.mark_board(3);//O 
+	board.mark_board(9);//X 
 	//X wins 
 
 	REQUIRE(board.game_over() == true);
@@ -177,15 +177,15 @@ TEST_CASE("Test win by diagonal from bottom", "[X wins diagonal bottom]")
 		345
 		678
 
-	   Diagonal bottom win are user positions 6,4, and 2
+	   Diagonal bottom win are user positions 7,5, and 3
 	  */
 	TicTacToeBoard board;
 	board.start_game("X");
-	board.mark_board(2);//X 
+	board.mark_board(3);//X 
 	board.mark_board(0);//O 
-	board.mark_board(4);//X 
-	board.mark_board(3);//O 
-	board.mark_board(6);//X 
+	board.mark_board(5);//X 
+	board.mark_board(2);//O 
+	board.mark_board(7);//X 
 	//X wins 
 
 	REQUIRE(board.game_over() == true);
@@ -200,15 +200,15 @@ TEST_CASE("Test for no win", "[board filled, no winner]")
 	  */
 	TicTacToeBoard board;
 	board.start_game("X");
-	board.mark_board(1);//X 
-	board.mark_board(0);//O 
-	board.mark_board(3);//X 
-	board.mark_board(2);//O 
-	board.mark_board(4);//X
-	board.mark_board(5);//O
-	board.mark_board(6);//X
-	board.mark_board(7);//O
-	board.mark_board(8);//X
+	board.mark_board(2);//X 
+	board.mark_board(1);//O 
+	board.mark_board(4);//X 
+	board.mark_board(3);//O 
+	board.mark_board(5);//X
+	board.mark_board(6);//O
+	board.mark_board(7);//X
+	board.mark_board(8);//O
+	board.mark_board(9);//X
 
 	REQUIRE(board.game_over() == true);
 
@@ -222,9 +222,9 @@ TEST_CASE("Test no-win", "[no-win by incomplete]")
 	  */
 	TicTacToeBoard board;
 	board.start_game("X");
-	board.mark_board(0);//X 
-	board.mark_board(3);//O 
-	board.mark_board(6);//X 
+	board.mark_board(1);//X 
+	board.mark_board(4);//O 
+	board.mark_board(7);//X 
 
 	REQUIRE(board.game_over() == false);
 }
