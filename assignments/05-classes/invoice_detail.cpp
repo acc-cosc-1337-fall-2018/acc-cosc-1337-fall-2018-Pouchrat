@@ -1,4 +1,4 @@
-#include "invoice_detail.h"
+#include "invoice.h"
 
 double InvoiceDetail::get_extended_cost() const
 {
@@ -7,4 +7,14 @@ double InvoiceDetail::get_extended_cost() const
 	product = cost * units;
 
 	return product;
+}
+
+std::istream & operator>>(std::istream& in, InvoiceDetail & d)
+{
+	cout << "Enter cost: ";
+	in >> d.cost;
+	cout << "Enter units: ";
+	in >> d.units;
+
+	return in;
 }

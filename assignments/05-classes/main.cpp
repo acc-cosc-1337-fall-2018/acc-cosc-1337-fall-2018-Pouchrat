@@ -8,6 +8,8 @@ int main() {
 	std::cin >> num;
 
 	Invoice invoice;
+	InvoiceDetail detail;
+	std::cin >> detail;
 
 	invoice.add_invoice_detail(InvoiceDetail(10, 10));
 	invoice.add_invoice_detail(InvoiceDetail(5, 5));
