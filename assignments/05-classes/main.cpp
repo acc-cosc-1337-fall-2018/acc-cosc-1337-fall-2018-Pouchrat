@@ -1,21 +1,22 @@
 #include "invoice.h"
+#include<iostream>
 
 int main() {
-	InvoiceDetail d(10, 10);
-	std::cout << d.get_extended_cost();
-	
-	int num;
-	std::cin >> num;
 
 	Invoice invoice;
 	InvoiceDetail detail;
-	std::cin >> detail;
 
-	invoice.add_invoice_detail(InvoiceDetail(10, 10));
+	cin >> detail;
+
+	invoice.add_invoice_detail(detail);
 	invoice.add_invoice_detail(InvoiceDetail(5, 5));
 	invoice.add_invoice_detail(InvoiceDetail(100, 2));
-	
-	std::cout << invoice.get_total();
 
+	Invoice invoice1;
+	invoice1.add_invoice_detail(InvoiceDetail(100, 2));
+
+	Invoice result = invoice + invoice1;
+	std::cout<<result.get_total();
+	
 	return 0;
 }
