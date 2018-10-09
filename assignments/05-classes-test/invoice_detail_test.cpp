@@ -20,11 +20,8 @@ TEST_CASE("test invoice get total") {
 
 TEST_CASE("test invoice operator overloading", "answer 10 cost, 10 units") {
 	Invoice invoice;
-	InvoiceDetail detail;
 
-	cin >> detail;
-
-	invoice.add_invoice_detail(detail);
+	invoice.add_invoice_detail(InvoiceDetail(10, 10));
 	invoice.add_invoice_detail(InvoiceDetail(5, 5));
 	invoice.add_invoice_detail(InvoiceDetail(100, 2));
 
