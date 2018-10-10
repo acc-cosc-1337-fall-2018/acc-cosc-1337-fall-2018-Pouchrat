@@ -18,7 +18,7 @@ int main() {
 	invoice1.add_invoice_detail(InvoiceDetail(100, 2));
 
 	Invoice result = invoice + invoice1;
-	std::cout<<result.get_total();
+	std::cout<<result.get_total() << std::endl;
 
 	inv.add_invoice_detail(InvoiceDetail(100, 1));
 
