@@ -173,9 +173,9 @@ TEST_CASE("Test win by diagonal from top", "[X wins diagonal top]")
 
 TEST_CASE("Test win by diagonal from bottom", "[X wins diagonal bottom]")
 { /* Tic Tac Toe Board
-		012
-		345
-		678
+		012    123
+		345    456
+		678    789
 
 	   Diagonal bottom win are user positions 7,5, and 3
 	  */
