@@ -6,9 +6,11 @@ bool TicTacToeBoard::game_over()
 		|| check_diagonal_win() == true) {
 		if (next_player == "X") {
 			o_win++;
+			total++;
 		}
 		else {
 			x_win++;
+			total++;
 		}
 		cout << "X score: " << x_win << endl
 			<< "O score: " << o_win << endl
@@ -17,12 +19,19 @@ bool TicTacToeBoard::game_over()
 	}
 	else if (check_board_full() == true) {
 		c_win++;
+		total++;
 		cout << "X score: " << x_win << endl
 			<< "O score: " << o_win << endl
 			<< "Ties: " << c_win << endl;
 		return true;
 	}
 	return false;
+
+	//i set it to output the score after game over
+		//because i got sick of seeing the scores every time the board refreshed
+		//even though they weren't gonna change til the game ended
+		//so that's what's going on there
+	//i put this notice in like 3 different places. just in case.
 }
 
 void TicTacToeBoard::start_game(string player)
@@ -138,6 +147,13 @@ ostream & operator<<(ostream & out, const TicTacToeBoard & d)
 	cout << d.pegs[0] << " | " << d.pegs[1] << " | " << d.pegs[2] << endl;
 	cout << d.pegs[3] << " | " << d.pegs[4] << " | " << d.pegs[5] << endl;
 	cout << d.pegs[6] << " | " << d.pegs[7] << " | " << d.pegs[8] << endl;
+
+	//i set it to output the score after game over
+		//because i got sick of seeing the scores every time the board refreshed
+		//even though they weren't gonna change til the game ended
+		//so that's what's going on there
+	//i put this notice in like 3 different places. just in case.
+
 	return out;
 }
 

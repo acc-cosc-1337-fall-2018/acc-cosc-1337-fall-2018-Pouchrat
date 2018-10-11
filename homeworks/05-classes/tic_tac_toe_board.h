@@ -16,6 +16,7 @@ public:
 	void start_game(string player);
 	void mark_board(int position);
 	string get_player();
+	int total = 0;
 	friend istream& operator>>(istream& in, TicTacToeBoard& d);
 	friend ostream& operator<<(ostream& out, const TicTacToeBoard& d);
 	TicTacToeBoard TicTacToeBoard::operator+=(const TicTacToeBoard& result);

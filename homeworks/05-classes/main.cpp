@@ -3,22 +3,14 @@
 int main() {
 	//TicTacToeBoard board;
 	
-	TicTacToeBoard a;
-	TicTacToeBoard b;
-	TicTacToeBoard c;
+	TicTacToeBoard t; //tally
+	TicTacToeBoard a; //game 1
+	TicTacToeBoard b; //game 2
+	TicTacToeBoard c; //game 3
 
 
 	do {
-		string start = "y";
 		string marker = " ";
-
-		cout << "Start A? (y/n) ";
-		cin >> start;
-
-		if (start == "y" || start == "Y") {
-			a.game_over() == false;
-		}
-		else break;
 
 		while (marker != "x" && marker != "o" && marker != "X" && marker != "O") {
 			cout << "First player letter? (x/o) ";
@@ -31,20 +23,20 @@ int main() {
 			cout << a;
 		}
 
-		cout << "\nGame over!\n";
+		//only gonna output score for "a"
+		//i set it to output the score after game over
+			//because i got sick of seeing the scores every time the board refreshed
+			//even though they weren't gonna change til the game ended
+			//so that's what's going on there
+		//i put this notice in like 3 different places. just in case.
 
+		cout << "\nGame over!\n";
+		t.total += a.total;
+		break;
 	} while (a.game_over() == true);
 
 	do {
-		string start = "y";
 		string marker = " ";
-		cout << "Start B? (y/n) ";
-		cin >> start;
-
-		if (start == "y" || start == "Y") {
-			b.game_over() == false;
-		}
-		else break;
 
 		while (marker != "x" && marker != "o" && marker != "X" && marker != "O") {
 			cout << "First player letter? (x/o) ";
@@ -57,20 +49,15 @@ int main() {
 			cout << b;
 		}
 
-		cout << "\nGame over!\n";
+		//only gonna output score for "b"
 
+		cout << "\nGame over!\n";
+		t.total += b.total;
+		break;
 	} while (b.game_over() == true);
 
 	do {
-		string start = "y";
 		string marker = " ";
-		cout << "Start C? (y/n) ";
-		cin >> start;
-
-		if (start == "y" || start == "Y") {
-			c.game_over() == false;
-		}
-		else break;
 
 		while (marker != "x" && marker != "o" && marker != "X" && marker != "O") {
 			cout << "First player letter? (x/o) ";
@@ -83,17 +70,16 @@ int main() {
 			cout << c;
 		}
 
-		cout << "\nGame over!\n";
+		//only gonna output score for "c"
 
+		cout << "\nGame over!\n";
+		t.total += c.total;
+		break;
 	} while (c.game_over() == true);
 
-	vector<TicTacToeBoard> current_board_in_vector = { a,b,c };
-	TicTacToeBoard result;
-	for (auto cbv : current_board_in_vector) {
-		result += cbv;
-	}
+	//t.total = a.total + b.total + c.total;
 
-	cout << result;
+	cout << "Games Played: " << t.total;
 
 	/*do {
 		string start = "y";
