@@ -19,7 +19,7 @@ public:
 	int total = 0;
 	friend istream& operator>>(istream& in, TicTacToeBoard& d);
 	friend ostream& operator<<(ostream& out, const TicTacToeBoard& d);
-	TicTacToeBoard TicTacToeBoard::operator+=(const TicTacToeBoard& result);
+	TicTacToeBoard operator+=(const TicTacToeBoard& result);
 private:
 	void set_next_player();
 	bool check_column_win();
