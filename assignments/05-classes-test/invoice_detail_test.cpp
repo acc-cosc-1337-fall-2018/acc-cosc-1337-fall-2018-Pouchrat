@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include "invoice.h"
 #include "invoice_utility.h"
+#include "invoice_progress.h"
 
 TEST_CASE("invoice detail", "get extended cost") {
 	InvoiceDetail detail(10,10);
@@ -38,4 +39,11 @@ TEST_CASE("test invoice utlitiy", "") {
 	inv.add_invoice_detail(InvoiceDetail(100, 1));
 
 	REQUIRE(inv.get_total() == 125);
+}
+
+TEST_CASE("test invoice progress get_total") {
+	InvoiceProgress inv(250);
+	inv.add_invoice_detail(InvoiceDetail(100, 1));
+
+	REQUIRE(inv.get_total() == 150);
 }

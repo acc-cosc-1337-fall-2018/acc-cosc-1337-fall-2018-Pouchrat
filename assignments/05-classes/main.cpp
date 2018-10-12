@@ -1,10 +1,26 @@
 #include "invoice.h"
 #include "invoice_utility.h"
-#include<iostream>
+#include "invoice_progress.h"
+#include <iostream>
 
 int main() {
 
-	Invoice invoice;
+	InvoiceUtility invu(25);
+	invu.add_invoice_detail(InvoiceDetail(100, 1));
+	InvoiceProgress invp(250);
+	invp.add_invoice_detail(InvoiceDetail(100, 1));
+	
+	cout << invu.get_total() << std::endl;
+	cout << invp.get_total() << std::endl;
+
+	Invoice& u = invu;
+	Invoice& p = invp;
+
+	cout << u.get_total() << std::endl;
+	cout << p.get_total();
+
+
+	/*Invoice invoice;
 	InvoiceDetail detail;
 	InvoiceUtility inv(25);
 
@@ -22,7 +38,7 @@ int main() {
 
 	inv.add_invoice_detail(InvoiceDetail(100, 1));
 
-	cout << inv.get_total();
+	cout << inv.get_total();*/
 	
 	return 0;
 }
