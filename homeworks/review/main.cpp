@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <vector>
 
 
@@ -19,7 +19,7 @@ class Circle : public Shape
 public:
 	void draw() { std::cout << "Circle"; }
 
-};
+};*/
 
 int main()
 {
@@ -31,7 +31,7 @@ int main()
 	Shape& shape_c = c;
 	shape_c.draw();*/
 
-	std::vector<std::reference_wrapper<Shape>> shapes;
+	/*std::vector<std::reference_wrapper<Shape>> shapes;
 	Line line;
 	Circle c;
 	shapes.push_back(line);
@@ -39,6 +39,8 @@ int main()
 
 	for (auto wrsshape : shapes) {
 		wrsshape.get().draw();
-	}
+	}*/
+
+	return 0;
 
 }
