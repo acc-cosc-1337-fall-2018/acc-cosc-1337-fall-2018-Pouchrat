@@ -1,5 +1,32 @@
 #include "review.h"
 
+vector<int> dna_letters_count(string dna) {
+	vector<int> letters;
+	int a{ 0 }; int c{ 0 }; int g{ 0 }; int t{ 0 };
+
+	for (auto d : dna) {
+		if (d == 'A') {
+			a++;
+		}
+		else if (d == 'C') {
+			c++;
+		}
+		else if (d == 'G') {
+			g++;
+		}
+		else if (d == 'T') {
+			t++;
+		}
+	}
+
+	letters.push_back(a);
+	letters.push_back(c);
+	letters.push_back(g);
+	letters.push_back(t);
+
+	return letters;
+}
+
 void str_by_ref(string& reference) {
 	string newstr;
 	for (int i = reference.size() - 1; i != -1; --i) {
@@ -79,32 +106,6 @@ std::ostream & operator<<(std::ostream & out, Receipt & r)
 	return out;
 }
 
-vector<int> dna_letters_count(string dna) {
-	vector<int> letters;
-	int a{ 0 }; int c{ 0 }; int g{ 0 }; int t{ 0 };
-	
-	for (auto d : dna) {
-		if (d == 'A') {
-			a++;
-		}
-		else if (d == 'C') {
-			c++;
-		}
-		else if (d == 'G') {
-			g++;
-		}
-		else if (d == 'T') {
-			t++;
-		}
-	}
-
-	letters.push_back(a);
-	letters.push_back(c);
-	letters.push_back(g);
-	letters.push_back(t);
-
-	return letters;
-}
 
 double Receipt::total_amount()
 {
