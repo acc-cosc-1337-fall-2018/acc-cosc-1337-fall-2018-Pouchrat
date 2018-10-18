@@ -1,45 +1,17 @@
-/*#include <iostream>
-#include <vector>
+#include "review.h"
 
-
-class Shape
-{
-public:
-	virtual void draw() {}
-};
-
-class Line : public Shape
-{
-public:
-	void draw() { std::cout << "Line"; }
-};
-
-class Circle : public Shape
-{
-public:
-	void draw() { std::cout << "Circle"; }
-
-};*/
 
 int main()
 {
-
-	/*Line line;
-	Shape& shape = line;
-	shape.draw();
-	Circle c;
-	Shape& shape_c = c;
-	shape_c.draw();*/
-
-	/*std::vector<std::reference_wrapper<Shape>> shapes;
-	Line line;
-	Circle c;
-	shapes.push_back(line);
-	shapes.push_back(c);
-
-	for (auto wrsshape : shapes) {
-		wrsshape.get().draw();
+	//vector <int> dna = dna_letters_count("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
+	
+	/*for (auto d : dna) {
+		cout << d << endl;
 	}*/
+
+	vector<int>g = { 95, 90, 91, 92, 85, 86, 87, 88, 71, 72, 73, 74, 75, 61, 62, 63, 64, 50, 40, 30 };
+
+	grades(g);
 
 	return 0;
 

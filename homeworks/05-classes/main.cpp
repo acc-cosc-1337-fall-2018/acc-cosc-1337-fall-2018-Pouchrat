@@ -1,6 +1,7 @@
 #include "tic_tac_toe_board.h"
 
 int main() {
+	/*
 	//TicTacToeBoard board;
 	
 	TicTacToeBoard t; //tally
@@ -28,7 +29,7 @@ int main() {
 		t += board;
 	}
 
-	cout << t;
+	cout << t; */
 
 	return 0;
 }
