@@ -1,5 +1,32 @@
 #include "review.h"
 
+void str_by_ref(string& reference) {
+	string newstr;
+	for (int i = reference.size() - 1; i != -1; --i) {
+		newstr += reference[i];
+	}
+	reference = newstr;
+	//works because you're changing reference at its address, so it carries over
+}
+string str_by_val(string value){
+	string newstr;
+	for (int i = value.size() - 1; i != -1; --i) {
+		newstr += value[i];
+	}
+	value = newstr;
+	return value; //different variable/address than in main, 
+					
+//doesn't change the reference @ value
+}
+string str_by_reference(string& const something) {
+	string newstr;
+	for (int i = something.size() - 1; i != -1; --i) {
+		newstr += something[i];
+	}
+	something = newstr; //this works because you're changing the constant at the reference
+	return something;
+}
+
 void grades(vector<int> g) {
 	int a{ 0 };
 	int b{ 0 };
