@@ -57,6 +57,11 @@ string TicTacToeBoard::get_player()
 	return next_player;
 }
 
+string TicTacToeBoard::get_winner()
+{
+	return string();
+}
+
 void TicTacToeBoard::set_next_player()
 {
 	if (next_player == "X") {

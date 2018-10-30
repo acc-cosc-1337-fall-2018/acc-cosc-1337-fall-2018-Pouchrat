@@ -2,19 +2,10 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include "peg.h"
 using std::string; using std::cout; using std::cin; using std::vector; using std::endl; using std::istream;
 using std::ostream;
 
-#ifndef PEGS
-#define PEGS
-
-class Peg {
-public:
-	Peg() = default;
-	string val;
-};
-
-#endif //PEGS
 
 
 #ifndef TTT_BOARD
@@ -34,13 +25,13 @@ public:
 	friend ostream& operator<<(ostream& out, const TicTacToeBoard& d);
 protected:
 	void set_next_player();
-	bool check_column_win();
-	bool check_row_win();
-	bool check_diagonal_win();
+	virtual bool check_column_win() = 0;
+	virtual bool check_row_win() = 0;
+	virtual bool check_diagonal_win() = 0;
 	void clear_board();
 	bool check_board_full();
-	void display_board(ostream& out);
-	void get_input(istream& in);
+	virtual void display_board(ostream& out) = 0;
+	virtual void get_input(istream& in) = 0;
 	vector<Peg> pegs;
 	string next_player;
 	string winner;
