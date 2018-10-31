@@ -3,15 +3,15 @@
 #ifndef TT3
 #define TT3
 
-class TicTacToe3 {
+class TicTacToe3: public TicTacToeBoard {
 public:
-	TicTacToe3() = default;
+	TicTacToe3();
 protected:
-	bool check_column_win();
-	bool check_row_win();
-	bool check_diagonal_win();
-	void display_board(ostream& out);
-	void get_input(istream&in);
+	bool check_column_win() const override;
+	bool check_row_win() const override;
+	bool check_diagonal_win() const override;
+	void display_board(ostream& out) const override;
+	void get_input(istream&in) override;
 	vector<Peg> pegs{ 9 };
 };
 

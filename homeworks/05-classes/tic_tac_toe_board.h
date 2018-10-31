@@ -25,12 +25,12 @@ public:
 	friend ostream& operator<<(ostream& out, const TicTacToeBoard& d);
 protected:
 	void set_next_player();
-	virtual bool check_column_win() = 0;
-	virtual bool check_row_win() = 0;
-	virtual bool check_diagonal_win() = 0;
+	virtual bool check_column_win() const = 0;
+	virtual bool check_row_win() const = 0;
+	virtual bool check_diagonal_win() const = 0;
 	void clear_board();
 	bool check_board_full();
-	virtual void display_board(ostream& out) = 0;
+	virtual void display_board(ostream& out) const = 0;
 	virtual void get_input(istream& in) = 0;
 	vector<Peg> pegs;
 	string next_player;

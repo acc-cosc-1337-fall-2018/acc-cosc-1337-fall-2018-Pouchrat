@@ -48,7 +48,7 @@ void TicTacToeBoard::start_game(string player)
 void TicTacToeBoard::mark_board(int position)
 {
 	int real_pos = position - 1;
-	pegs[real_pos] = next_player;
+	pegs[real_pos].val = next_player;
 	set_next_player();
 }
 
@@ -72,56 +72,44 @@ void TicTacToeBoard::set_next_player()
 	}
 }
 
-bool TicTacToeBoard::check_column_win()
+bool TicTacToeBoard::check_column_win() const
 {
-	if ((pegs[0] == "X" && pegs[3] == "X" && pegs[6] == "X") || 
-		(pegs[1] == "X" && pegs[4] == "X" && pegs[7] == "X") ||
-		(pegs[2] == "X" && pegs[5] == "X" && pegs[8] == "X")) {
-		return true;
-	}
-	else if	((pegs[0] == "O" && pegs[3] == "O" && pegs[6] == "O") ||
-		(pegs[1] == "O" && pegs[4] == "O" && pegs[7] == "O") ||
-		(pegs[2] == "O" && pegs[5] == "O" && pegs[8] == "O")) {
-		return true;
+	for (int i = 0; i < pegs.size(); i++) {
+		if (pegs[i].val == pegs[i + 3].val && pegs[i + 3].val == pegs[i + 6].val && pegs[i].val != " ") {
+			return true;
+		}
 	}
 
-	else return false;
+	return false;
 	
 }
 
-bool TicTacToeBoard::check_row_win()
+bool TicTacToeBoard::check_row_win() const
 {
-	if ((pegs[0] == "X" && pegs[1] == "X" && pegs[2] == "X") ||
-		(pegs[3] == "X" && pegs[4] == "X" && pegs[5] == "X") ||
-		(pegs[6] == "X" && pegs[7] == "X" && pegs[8] == "X")) {
-		return true;
-	}
-	else if	((pegs[0] == "O" && pegs[1] == "O" && pegs[2] == "O") || 
-		(pegs[3] == "O" && pegs[4] == "O" && pegs[5] == "O") || 
-		(pegs[6] == "O" && pegs[7] == "O" && pegs[8] == "O")) {
-		return true;
+	for (int i = 0; i < pegs.size(); i++) {
+		if (pegs[i].val == pegs[i + 1].val && pegs[i + 1].val == pegs[i + 1].val && pegs[i].val != " ") {
+			return true;
+		}
 	}
 
-	else return false;
+	return false;
 }
 
-bool TicTacToeBoard::check_diagonal_win()
+bool TicTacToeBoard::check_diagonal_win() const
 {
-	if ((pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X") || 
-		(pegs[2] == "X" && pegs[4] == "X" && pegs[6] == "X")) {
-		return true;
+	for (int i = 0; i < pegs.size(); i++) {
+		if (pegs[i].val == pegs[i + 4].val && pegs[i + 4].val == pegs[i + 8].val && pegs[i].val != " ") {
+			return true;
+		}
 	}
-	else if ((pegs[0] == "O" && pegs[4] == "O" && pegs[8] == "O") ||
-		(pegs[2] == "O" && pegs[4] == "O" && pegs[6] == "O")){
-		return true;
-	}
+
 	return false;
 }
 
 void TicTacToeBoard::clear_board()
 {
 	for (int i = 0; i < 9; i++) {
-		pegs[i] = " ";
+		pegs[i].val = " ";
 	}
 }
 
@@ -129,7 +117,7 @@ bool TicTacToeBoard::check_board_full()
 {
 	for (auto p : pegs)
 	{
-		if (p == " "){
+		if (p.val == " "){
 
 			return false;
 		}
@@ -139,34 +127,12 @@ bool TicTacToeBoard::check_board_full()
 
 istream& operator>>(istream & in, TicTacToeBoard & d)
 {
-	int pos = 0;
-	cout << "Place " << d.get_player() << " where? (1-9) ";
-	in >> pos;
-	d.mark_board(pos);
+	d.get_input(in);
 	return in;
 }
 
 ostream & operator<<(ostream & out, const TicTacToeBoard & d)
 {
-
-	cout << d.pegs[0] << " | " << d.pegs[1] << " | " << d.pegs[2] << endl;
-	cout << d.pegs[3] << " | " << d.pegs[4] << " | " << d.pegs[5] << endl;
-	cout << d.pegs[6] << " | " << d.pegs[7] << " | " << d.pegs[8] << endl;
-
-	//i set it to output the score after game over
-		//because i got sick of seeing the scores every time the board refreshed
-		//even though they weren't gonna change til the game ended
-		//so that's what's going on there
-	//i put this notice in like 3 different places. just in case.
-
+	d.display_board(out);
 	return out;
-}
-
-TicTacToeBoard TicTacToeBoard::operator+=(const TicTacToeBoard &result)
-{
-	x_win += result.x_win;
-	o_win += result.o_win;
-	c_win += result.c_win;
-
-	return TicTacToeBoard(x_win, o_win, c_win);
 }

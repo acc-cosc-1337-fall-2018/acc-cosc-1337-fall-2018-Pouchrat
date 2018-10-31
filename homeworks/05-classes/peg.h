@@ -1,9 +1,10 @@
+
 #ifndef PEGS
 #define PEGS
 
 class Peg {
 public:
-	Peg() = default;
+	Peg() { val = " "; }
 	string val;
 };
 
