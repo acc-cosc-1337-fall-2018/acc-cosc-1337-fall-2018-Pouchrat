@@ -3,6 +3,8 @@
 #include <vector>
 #include <fstream>
 #include "peg.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 using std::string; using std::cout; using std::cin; using std::vector; using std::endl; using std::istream;
 using std::ostream;
 
