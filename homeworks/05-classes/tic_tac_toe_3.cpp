@@ -10,8 +10,8 @@ TicTacToe3::TicTacToe3(){
 
 bool TicTacToe3::check_column_win() const
 {
-	for (int i = 0; i < pegs.size(); i++) {
-		if (pegs[i].val == pegs[i + 3].val && pegs[i + 3].val == pegs[i + 6].val && pegs[i].val != " ") {
+	for (int i = 0; i < 3; i++) {
+		if (pegs[i].val == pegs[i + 3].val && pegs[i].val == pegs[i + 6].val && pegs[i].val != " ") {
 			return true;
 		}
 	}
@@ -22,29 +22,37 @@ bool TicTacToe3::check_column_win() const
 
 bool TicTacToe3::check_row_win() const
 {
-	for (int i = 0; i < pegs.size(); i++) {
-		if (pegs[i].val == pegs[i + 1].val && pegs[i + 1].val == pegs[i + 1].val && pegs[i].val != " ") {
-			return true;
-		}
+	if (pegs[0].val == pegs[1].val && pegs[0].val == pegs[2].val && pegs[0].val != " ") {
+		return true;
 	}
+	else if (pegs[3].val == pegs[4].val && pegs[3].val == pegs[5].val && pegs[3].val != " ") {
+		return true;
+	}
+	else if (pegs[6].val == pegs[7].val && pegs[6].val == pegs[8].val && pegs[6].val != " ") {
+		return true;
+	}
+
 
 	return false;
 }
 
 bool TicTacToe3::check_diagonal_win() const
 {
-	for (int i = 0; i < pegs.size(); i++) {
-		if (pegs[i].val == pegs[i + 4].val && pegs[i + 4].val == pegs[i + 8].val && pegs[i].val != " ") {
-			return true;
-		}
+
+	if (pegs[0].val == pegs[4].val && pegs[0].val == pegs[8].val && pegs[0].val != " ") {
+		return true;
 	}
+	else if (pegs[2].val == pegs[4].val && pegs[2].val == pegs[6].val && pegs[2].val != " ") {
+		return true;
+	}
+
 
 	return false;
 }
 
 void TicTacToe3::display_board(ostream & out) const
 {
-	for (int i = 0; i < pegs.size(); i++) {
+	for (int i = 0; i < pegs.size() ; i = i + 3) {
 		cout << pegs[i].val << " | " << pegs[i + 1].val << " | " << pegs[i + 2].val << endl;
 	}
 }

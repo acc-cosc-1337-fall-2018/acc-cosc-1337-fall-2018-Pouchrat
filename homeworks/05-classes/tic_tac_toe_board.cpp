@@ -108,7 +108,7 @@ bool TicTacToeBoard::check_diagonal_win() const
 
 void TicTacToeBoard::clear_board()
 {
-	for (int i = 0; i < 9; i++) {
+	for (int i = 0; i < pegs.size(); i++) {
 		pegs[i].val = " ";
 	}
 }

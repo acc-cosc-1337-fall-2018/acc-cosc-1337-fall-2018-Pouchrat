@@ -1,6 +1,9 @@
 #include "tic_tac_toe_board.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 
 int main() {
+	
 	/*
 	//TicTacToeBoard board;
 	
