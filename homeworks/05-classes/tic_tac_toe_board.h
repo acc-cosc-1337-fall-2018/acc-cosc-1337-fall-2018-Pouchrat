@@ -3,8 +3,6 @@
 #include <vector>
 #include <fstream>
 #include "peg.h"
-#include "tic_tac_toe_3.h"
-#include "tic_tac_toe_4.h"
 using std::string; using std::cout; using std::cin; using std::vector; using std::endl; using std::istream;
 using std::ostream;
 
@@ -21,7 +19,6 @@ public:
 	void mark_board(int position);
 	string get_player();
 	string get_winner();
-	void start_game(string next_player);
 	int total = 0;
 	friend istream& operator>>(istream& in, TicTacToeBoard& d);
 	friend ostream& operator<<(ostream& out, const TicTacToeBoard& d);

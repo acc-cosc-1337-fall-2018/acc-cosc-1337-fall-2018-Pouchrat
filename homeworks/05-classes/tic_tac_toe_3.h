@@ -12,7 +12,7 @@ protected:
 	bool check_diagonal_win() const override;
 	void display_board(ostream& out) const override;
 	void get_input(istream&in) override;
-	vector<Peg> pegs{ 9 };
+	vector<Peg> pegs;
 };
 
 #endif // !TT3

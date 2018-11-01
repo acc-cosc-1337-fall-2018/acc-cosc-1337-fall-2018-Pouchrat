@@ -1,6 +1,8 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "tic_tac_toe_board.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 
 TEST_CASE("Test Game Over 3") {
 	TicTacToe3 board;

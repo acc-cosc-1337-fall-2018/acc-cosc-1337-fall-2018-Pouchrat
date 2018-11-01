@@ -1,10 +1,12 @@
-
+#include <iostream>
+#include <string>
+using std::string;
 #ifndef PEGS
 #define PEGS
 
 class Peg {
 public:
-	Peg() { val = " "; }
+	Peg() { string val = " "; }
 	string val;
 };
 

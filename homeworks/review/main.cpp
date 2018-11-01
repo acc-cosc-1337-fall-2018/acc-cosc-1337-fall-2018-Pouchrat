@@ -46,7 +46,7 @@ int main()
 
 	string tester = "some bunch of letters";
 	cout << tester << endl;
-	str_by_val(tester)
+	str_by_val(tester);
 	cout << tester << endl;
 
 	string whatever = "whatever";
