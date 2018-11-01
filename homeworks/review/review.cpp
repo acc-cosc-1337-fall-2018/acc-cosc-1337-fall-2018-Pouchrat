@@ -27,7 +27,7 @@ vector<int> dna_letters_count(string dna) {
 	return letters;
 }
 
-void str_by_ref(string& reference) {
+/*void str_by_ref(string& reference) {
 	string newstr;
 	for (int i = reference.size() - 1; i != -1; --i) {
 		newstr += reference[i];
@@ -52,7 +52,7 @@ string str_by_reference(string& const something) {
 	}
 	something = newstr; //this works because you're changing the constant at the reference
 	return something;
-}
+}*/
 
 void grades(vector<int> g) {
 	int a{ 0 };

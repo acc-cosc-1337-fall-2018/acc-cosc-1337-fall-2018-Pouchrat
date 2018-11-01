@@ -25,13 +25,13 @@ int main()
 	cin >> rec;
 	cout << rec.total_amount();
 
-	string ref = "wake me up (wake me up inside)";
+	/*string ref = "wake me up (wake me up inside)";
 	
 	cout << ref << endl;
 
 	str_by_ref(ref);
 
-	cout << ref << endl;
+	cout << ref << endl;*/
 	
 
 	vector <int> dna = dna_letters_count("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
@@ -44,7 +44,7 @@ int main()
 
 	grades(g);
 
-	string tester = "some bunch of letters";
+	/*string tester = "some bunch of letters";
 	cout << tester << endl;
 	str_by_val(tester);
 	cout << tester << endl;
@@ -52,7 +52,7 @@ int main()
 	string whatever = "whatever";
 	cout << whatever << endl;
 	str_by_reference(whatever);
-	cout << whatever << endl;
+	cout << whatever << endl;*/
 
 	Line line;
 	Shape& shape = line;

@@ -5,9 +5,9 @@
 
 using std::cout; using std::cin; using std::vector; using std::endl; using std::string;
 
-void str_by_ref(string &reference);
+/*void str_by_ref(string &reference);
 string str_by_val(string value);
-string str_by_reference(string& const something);
+string str_by_reference(string& const something);*/
 
 vector<int> dna_letters_count(string dna);
 void grades(vector<int>g);
