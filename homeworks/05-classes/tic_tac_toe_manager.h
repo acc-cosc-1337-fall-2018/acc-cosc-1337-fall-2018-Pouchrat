@@ -1,6 +1,11 @@
 #include "tic_tac_toe_board.h"
 
-class TicTacToeManager {
+enum GameType {
+	tic_tac_toe_3,
+	tic_tac_toe_4
+};
+
+class TicTacToeManager: public TicTacToeBoard {
 public:
 	TicTacToeManager();
 	const std::vector<std::unique_ptr<TicTacToeBoard>>& get_games();

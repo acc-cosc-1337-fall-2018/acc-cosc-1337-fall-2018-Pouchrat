@@ -2,12 +2,7 @@
 
 std::unique_ptr<TicTacToeBoard> get_game(GameType game_type) {
 
-	unique_ptr<TicTacToeBoard> g;
-
-	enum GameType {
-		tic_tac_toe_3,
-		tic_tac_toe_4
-	};
+	std::unique_ptr<TicTacToeBoard> g;
 
 	if (game_type = tic_tac_toe_3) {
 		std::make_unique<Three>();
@@ -21,7 +16,7 @@ std::unique_ptr<TicTacToeBoard> get_game(GameType game_type) {
 }
 
 void save_game(std::unique_ptr<TicTacToeBoard> save) {
-	TicTacToeBoard.push_back(save);
+	save.push_back(save);
 }
 
 void update_winner_count(string& win) {
