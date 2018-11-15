@@ -6,11 +6,6 @@
 class Frame : public wxFrame {
 public:
 	Frame();
-private:
-	void OnHello(wxCommandEvent& event);
-	void OnExit(wxCommandEvent& event);
-	void OnAbout(wxCommandEvent& event);
-
 };
 
 #endif //FRAME_H

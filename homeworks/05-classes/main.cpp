@@ -1,38 +1,31 @@
 #include "tic_tac_toe_board.h"
+#include "tic_tac_toe_manager.h"
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
 
 int main() {
 	
-	/*
-	//TicTacToeBoard board;
-	
-	TicTacToeBoard t; //tally
-	TicTacToeBoard a; //game 1
-	TicTacToeBoard b; //game 2
-	TicTacToeBoard c; //game 3
+	TicTacToeBoard board;
+	TicTacToeManager mgr;
+	int gt = 0;
 
-	vector<TicTacToeBoard> boards{a, b, c};
+	cout << "Game type?\n (0 = 3, 1 = 4)";
+	cin >> gt;
 
-	for (auto board : boards) 
-	{
-		string marker = " ";
+	mgr.get_game(gt);
 
-		while (marker != "x" && marker != "o" && marker != "X" && marker != "O") {
-			cout << "First player letter? (x/o) ";
-			cin >> marker;
-		}
-		a.start_game(marker);
+	do {
+		string player1;
+		cout << "First player: ";
+		cin >> player1;
+		board.start_game(player1);
+		cin >> mgr;
+		cout << mgr;
 
-		while (a.game_over() == false) {
-			cin >> a;
-			cout << a;
-		}
+	} while (board.game_over() != true);
 
-		t += board;
-	}
+	mgr.save_game(board.game_over());
 
-	cout << t; */
 
 	return 0;
 }

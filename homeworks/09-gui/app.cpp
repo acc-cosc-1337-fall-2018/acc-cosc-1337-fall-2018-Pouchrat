@@ -3,8 +3,8 @@
 
 bool App::OnInit()
 {
-	//auto frame = new Frame();
-	//frame->Show(true);
+	auto frame = new Frame();
+	frame->Show(true);
 
 	return true;
 }

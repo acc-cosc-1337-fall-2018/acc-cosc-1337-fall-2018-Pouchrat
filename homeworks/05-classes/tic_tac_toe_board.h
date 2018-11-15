@@ -19,6 +19,7 @@ public:
 	void mark_board(int position);
 	string get_player();
 	string get_winner();
+	vector<Peg>& get_pegs();
 	int total = 0;
 	friend istream& operator>>(istream& in, TicTacToeBoard& d);
 	friend ostream& operator<<(ostream& out, const TicTacToeBoard& d);
@@ -34,9 +35,6 @@ protected:
 	vector<Peg> pegs;
 	string next_player;
 	string winner;
-	int x_win = 0;
-	int o_win = 0;
-	int c_win = 0;
 
 };
 

@@ -1,5 +1,5 @@
 ﻿cmake_minimum_required(VERSION 3.8)
-project(gui_tictactoe)
+project(gui_tic_tac_toe)
 
 set(CMAKE_CXX_STANDARD 11)
 
@@ -15,6 +15,6 @@ if(wxWidgets_FOUND)
 	set(SOURCE_FILES main.cpp app.h app.cpp frame.h frame.cpp 
 	                 panel.h panel.cpp)
 
-	add_executable(gui_tictactoe_exe WIN32 ${SOURCE_FILES})
-	target_link_libraries(gui_tictactoe_exe ${wxWidgets_LIBRARIES} tic_tac_toe_library)
+	add_executable(gui_tic_tac_toe_exe WIN32 ${SOURCE_FILES})
+	target_link_libraries(gui_tic_tac_toe_exe ${wxWidgets_LIBRARIES} tic_tac_toe_library)
 endif()
