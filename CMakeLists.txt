@@ -9,6 +9,7 @@ include_directories(homeworks/04-vectors)
 include_directories(assignments/05-classes)
 include_directories(homeworks/05-classes)
 include_directories(homeworks/09-gui)
+include_directories(homeworks/11-graphics-clock)
 include_directories(homeworks/review)
 
 add_subdirectory(01-basics)
