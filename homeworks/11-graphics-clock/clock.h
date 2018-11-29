@@ -2,6 +2,7 @@
 #define CLOCK_H
 #include <chrono>
 #include <string>
+#include <iostream>
 
 class Clock
 {

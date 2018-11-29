@@ -33,7 +33,7 @@ void update_winner_count(string& win) {
 	}
 }
 
-friend std::ostream operator << (std::ostream& out, TicTacToeManager& m) {
+std::ostream operator << (std::ostream& out, TicTacToeManager& m) {
 
 	m.display_board(out);
 	cout << "X: " << x_win << "\nO: " << o_win << "\nCat: " << c_win << endl;
