@@ -45,3 +45,38 @@ void initialize_vector_of_strings() {
 		cout << p << endl;
 	}
 }
+
+void pass_by_pointer(int *ptr) {
+
+	// ptr: get address
+	// *ptr: get value at the address
+	*ptr = 99;
+
+}
+
+MyClass::MyClass()
+{
+	std::cout << "Constructor...\n";
+}
+
+MyClass::MyClass(MyClass & my_class)
+{
+	ptr_num = new int(*my_class.ptr_num);
+}
+
+MyClass::~MyClass()
+{
+	std::cout << "Destructor...\n" << "num: " << num << " ptr num: " << *ptr_num << " address: " << ptr_num << "\n";
+}
+
+void MyClass::set_ptr_num(int val)
+{
+	*ptr_num = val;
+}
+
+MyClass & MyClass::operator=(MyClass other)
+{
+	ptr_num = new int(*other.ptr_num);
+
+	return *this;
+}

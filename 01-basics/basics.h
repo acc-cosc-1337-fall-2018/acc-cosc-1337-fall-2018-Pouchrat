@@ -17,3 +17,22 @@ void const_pass_by_val_by_ref(int val, const int & ref);
 void initialize_vector_of_ints();
 
 void initialize_vector_of_strings();
+
+void pass_by_pointer(int* ptr);
+
+#ifndef MY_CLASS_H
+#define MY_CLASS_H
+
+class MyClass {
+public:
+	MyClass();
+	MyClass(MyClass& my_class);
+	~MyClass();
+	void set_ptr_num(int val);
+	MyClass&operator=(MyClass other);
+private:
+	int num = 5;
+	int * ptr_num = new int(10);
+};
+
+#endif // !MY_CLASS_H
