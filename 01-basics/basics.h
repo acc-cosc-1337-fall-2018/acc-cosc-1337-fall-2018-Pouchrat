@@ -23,13 +23,13 @@ void pass_by_pointer(int* ptr);
 #ifndef MY_CLASS_H
 #define MY_CLASS_H
 
-class MyClass {
+class MyClass { //rule of 3
 public:
 	MyClass();
-	MyClass(MyClass& my_class);
-	~MyClass();
+	MyClass(MyClass& my_class); //lets us copy stuff w/o copying the address in the "=" overload //copy constructor
+	~MyClass(); //destructor
 	void set_ptr_num(int val);
-	MyClass&operator=(MyClass other);
+	MyClass&operator=(MyClass other); //needs the extra MyClass& constructor
 private:
 	int num = 5;
 	int * ptr_num = new int(10);

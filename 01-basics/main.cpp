@@ -1,4 +1,5 @@
 ﻿#include "basics.h"
+#include <memory>
 
 using std::cout;
 
@@ -15,10 +16,13 @@ int main()
 
 	cout << num;*/
 
-	MyClass c;
-	MyClass a = c; //only works for non-ptr when not overriden
+	//MyClass c;
+	//MyClass a = c; //only works for non-ptr when not overriden
 
-	c.set_ptr_num(5000);
+
+	std::unique_ptr<MyClass> ptr_cls = std::make_unique<MyClass>();
+	ptr_cls->set_ptr_num(50);
+	
 
 	return 0;
 }
