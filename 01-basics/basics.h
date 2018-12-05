@@ -26,8 +26,9 @@ void pass_by_pointer(int* ptr);
 class MyClass { //rule of 3
 public:
 	MyClass();
-	MyClass(MyClass& my_class); //lets us copy stuff w/o copying the address in the "=" overload //copy constructor
-	~MyClass(); //destructor
+	MyClass(MyClass& my_class); //lets us copy stuff w/o copying the address in the "=" overload 
+								//ro3 copy constructor
+	~MyClass(); //ro3 destructor
 	void set_ptr_num(int val);
 	MyClass&operator=(MyClass other); //needs the extra MyClass& constructor
 private:

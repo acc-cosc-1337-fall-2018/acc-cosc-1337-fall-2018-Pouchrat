@@ -76,6 +76,8 @@ void MyClass::set_ptr_num(int val)
 
 MyClass & MyClass::operator=(MyClass other)
 {
+	std::cout << "RO3 Copy Assignment\n";
+	delete other.ptr_num; //delete "a" copy
 	ptr_num = new int(*other.ptr_num);
 
 	return *this;
