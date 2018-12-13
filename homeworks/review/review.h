@@ -3,30 +3,63 @@
 #include <string>
 #include <memory>
 
-using std::cout; using std::cin; using std::vector; using std::endl; using std::string;
-
-/*void str_by_ref(string &reference);
-string str_by_val(string value);
-string str_by_reference(string& const something);*/
-
-vector<int> dna_letters_count(string dna);
-void grades(vector<int>g);
+using std::cout; using std::cin; using std::endl; 
+using std::string; using std::vector;
 
 #ifndef RECEIPT_H
 #define RECEIPT_H
 
 class Receipt {
 public:
-	Receipt() = default;
-	Receipt(double bill) : bill_amount(bill) {}
-	friend std::istream & operator >> (std::istream& in, Receipt& r);
-	friend std::ostream & operator << (std::ostream&out, Receipt&r);
-	double total_amount();
+	/*Receipt(double a, double tr = .075) : amount(a), tax_rate(tr) { 
+		display();
+	}
+	void display();*/
+	Receipt(double a = 0, double tr = .075) : amount(a), tax_rate(tr) {}
+	friend std::ostream & operator<<(std::ostream& o, Receipt& r);
+	friend std::istream & operator>>(std::istream& i, Receipt& r);
 
 private:
-	double bill_amount;
-	double tip_amount;
-	double tax_amount;
+	double amount{ 0 };
+	double tip_amount = amount * .10;
+	double tax_rate{ .075 };
+	double tax_amount = amount * tax_rate;
+	double calculate_bill_total();
+
 };
 
 #endif // !RECEIPT_H
+
+#ifndef TEST_H
+#define TEST_H
+
+class Test {
+public:
+	Test() {
+		Receipt *r1 = new Receipt(10);
+		delete r1;
+	}
+	void execute() {
+		//Receipt display();
+	}
+
+private:
+	Receipt* receipt;
+};
+
+#endif // !TEST_H
+
+#ifndef TEST_3_H
+#define TEST_3_H
+
+class Test3 {
+public:
+	Test3() {}
+	void execute() {
+		
+	}
+private:
+
+};
+
+#endif // !TEST_3_H
